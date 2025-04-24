@@ -43,7 +43,7 @@ if page == "🏠 Accueil":
     col1, col2 = st.columns([1, 1])
     with col1:
         st.title("🌱 Bienvenue sur mon portfolio !")
-        st.markdown("""
+        st.markdown(""" 
         Je m'appelle **Channel NIANGA**, étudiant passionné en **Master Informatique**, parcours **Intelligence Artificielle**, actuellement en recherche de stage de fin d'étude.
 
         Mon objectif ? **Contribuer à des projets innovants en IA**, que ce soit en *machine learning*, *deep learning*, *traitement du langage naturel (NLP)* ou *computer vision*.
@@ -77,7 +77,7 @@ elif page == "📄 CV":
         st.download_button("📥 Télécharger le CV (PDF)", f.read(), "CV_Channel_NIANGA.pdf", mime="application/pdf")
 
     st.markdown("<hr style='border: 1px solid #bbb;'>", unsafe_allow_html=True)
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns([1, 1])
 
     with col1:
         st.subheader("🎓 Formations")
@@ -112,7 +112,7 @@ elif page == "📄 CV":
             - Mise en place de contrôles automatisés pour l'optimisation des processus.  
             **Tech Stack** : Angular (HTML, CSS, TypeScript), Git, Python, Pandas, SQL.
 
-        <hr style='border: 1px solid #bbb;'>
+        <hr style='border: 1px solid #bbb;'> 
 
         - **Institut Jean Lamour (IJL)** – Chercheur stagiaire *(janv. 2019 – avr. 2019)*  
             - Stage de recherche en **génie biomédical** sur les capteurs biomédicaux.  
@@ -120,7 +120,7 @@ elif page == "📄 CV":
             - Contribution à la documentation scientifique du laboratoire.  
             **Compétences** : Génie biomédical, Électronique.
 
-        <hr style='border: 1px solid #bbb;'>
+        <hr style='border: 1px solid #bbb;'> 
 
         - **Real Time Sportscast** – Commentateur sportif *(août 2019 – oct. 2021)*  
             - Freelance – Mission exclusivement en anglais  
@@ -158,7 +158,6 @@ elif page == "📬 Contact":
     col1, col2 = st.columns([1, 1])
     with col1:
         st.markdown("#### 💬 Laissez-moi un message")
-
         st.markdown("""
         <form action="https://formsubmit.co/channeliba@yahoo.com" method="POST">
             <input type="hidden" name="_captcha" value="false">
