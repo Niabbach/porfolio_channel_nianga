@@ -19,7 +19,7 @@ lottie_contact = load_lottie_url("https://assets6.lottiefiles.com/private_files/
 
 # --- Informations personnelles ---
 NOM = "Channel NIANGA"
-DESCRIPTION = "🎓 Étudiant Master 2 Informatique parcours Intélligence Artificielle | En recherche d'un stage de fin d'étude | Disponible à partir de Février 2026"
+DESCRIPTION = "🎓 Étudiant en Master 2 Informatique parcours Intélligence Artificielle | En recherche d'un stage de fin d'étude | Disponible à partir de Février 2026"
 EMAIL = "channeliba@yahoo.com"
 VILLE = "Caen, France"
 GITHUB = "https://github.com/Niabbach"
