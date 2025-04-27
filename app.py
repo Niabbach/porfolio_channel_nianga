@@ -34,7 +34,7 @@ lottie_contact = load_lottie_url("https://assets6.lottiefiles.com/private_files/
 # --- Style CSS personnalisé ---
 st.markdown("""
 <style>
-    .stApp { background-color: #f9f9f9; }
+    .stApp { background-color: white; }
     .stMarkdown { margin-bottom: 0.5rem; }
     .stButton>button { transition: all 0.3s ease; }
     .stButton>button:hover { transform: scale(1.02); }
