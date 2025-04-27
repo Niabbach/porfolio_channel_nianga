@@ -34,36 +34,46 @@ lottie_contact = load_lottie_url("https://assets6.lottiefiles.com/private_files/
 # --- Style CSS personnalisé ---
 st.markdown("""
 <style>
-    /* ===== FOND ET TEXTE PRINCIPAL ===== */
-    .stApp {
-        background-color: #ffffff;  /* Fond blanc */
-        color: #333333;            /* Texte sombre */
-    }
-
-    /* ===== CORRECTION VISIBILITÉ ===== */
-    /* Force le texte à être visible */
-    .stMarkdown, .stMarkdown p, .stMarkdown li {
-        color: #333333 !important; 
-        opacity: 1 !important;
-    }
-
-
-    /* ===== ZONES DE TEXTE CACHÉES ===== */
-    /* Corrige les bugs d'affichage sur mobile */
-    div[data-testid="stMarkdownContainer"] {
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    /* ===== SIDEBAR ===== */
+    /* ===== CORRECTION DE LA SIDEBAR ===== */
     [data-testid="stSidebar"] {
         background-color: #f8f9fa !important;
+        padding: 1rem !important;
+        border-radius: 0 20px 20px 0 !important;
     }
-
-    /* ===== BOUTONS ===== */
-    .stButton>button {
-        background-color: #4CAF50 !important;
-        color: white !important;
+    
+    /* Éléments de la sidebar */
+    .st-eb, .st-ec, .st-ed {  /* Conteneurs des radios */
+        padding: 0.5rem 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Texte dans la sidebar */
+    .st-cj, .st-ck, .st-cl, .st-cm {
+        color: #333333 !important;
+        opacity: 1 !important;
+    }
+    
+    /* Boutons radio */
+    [data-testid="stWidgetLabel"] p {
+        font-weight: 500 !important;
+        font-size: 15px !important;
+        color: #333333 !important;
+    }
+    
+    /* Séparateur */
+    .st-cn {
+        margin: 1rem 0 !important;
+    }
+    
+    /* ===== CORRECTIONS SPÉCIFIQUES ===== */
+    /* Langue */
+    div[data-testid="column"] + div[data-testid="column"] {
+        padding-top: 0 !important;
+    }
+    
+    /* Navigation */
+    div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
+        gap: 0.2rem !important;
     }
 </style>
 """, unsafe_allow_html=True)
