@@ -32,53 +32,36 @@ lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_pprx
 lottie_contact = load_lottie_url("https://assets6.lottiefiles.com/private_files/lf30_e3pteeho.json")
 
 # --- Style CSS personnalisé ---
+# --- Style CSS personnalisé ---
 st.markdown("""
 <style>
-    /* ===== CORRECTIONS SPÉCIFIQUES POUR LA SIDEBAR ===== */
-    /* Conteneur principal */
-    [data-testid="stSidebar"] {
-        background-color: #f8f9fa !important;
+    :root {
+        --primary: #4CAF50;
+        --text: #333333;
+        --background: #ffffff;
+        --card-bg: #f8f9fa;
     }
-
-    /* Tous les textes de la sidebar */
-    .st-emotion-cache-1cypcdb,
-    .st-emotion-cache-1cypcdb p,
-    .st-emotion-cache-1cypcdb span,
-    .st-emotion-cache-1cypcdb div {
-        color: #333333 !important;
-        opacity: 1 !important;
-        visibility: visible !important;
+    
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --text: #f0f0f0;
+            --background: #121212;
+            --card-bg: #1e1e1e;
+        }
     }
-
-    /* Sélecteur de langue */
-    .st-radio label {
-        color: #333333 !important;
-        background: transparent !important;
+    
+    .stApp {
+        background-color: var(--background);
+        color: var(--text);
     }
-
-    /* Navigation */
-    .st-radio [role="radiogroup"] label {
-        padding: 0.5rem 1rem !important;
-        margin: 0.2rem 0 !important;
-        border-radius: 4px !important;
+    
+    .stMarkdown {
+        color: var(--text) !important;
     }
-
-    /* Éléments sélectionnés */
-    .st-radio [role="radiogroup"] label[data-baseweb="radio"]:has(input:checked) {
-        background-color: #e8f5e9 !important;
-        color: #2c3e50 !important;
-    }
-
-    /* Séparateur */
-    .st-emotion-cache-1lguc8d {
-        border-color: #e0e0e0 !important;
-    }
-
-    /* ===== FORCER L'AFFICHAGE ===== */
-    /* Important pour certains appareils mobiles */
-    .stMarkdown, .stRadio, .stImage {
-        opacity: 1 !important;
-        visibility: visible !important;
+    
+    .project-card {
+        background-color: var(--card-bg);
+        color: var(--text) !important;
     }
 </style>
 """, unsafe_allow_html=True)
