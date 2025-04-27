@@ -34,49 +34,51 @@ lottie_contact = load_lottie_url("https://assets6.lottiefiles.com/private_files/
 # --- Style CSS personnalisé ---
 st.markdown("""
 <style>
-    /* ===== RÉINITIALISATION SÛRE ===== */
-    /* Réactive tous les textes */
-    .st-emotion-cache-1v0mbdj, 
-    .st-emotion-cache-1v0mbdj p,
-    .st-emotion-cache-1v0mbdj span,
-    .st-emotion-cache-1v0mbdj div {
+    /* ===== CORRECTIONS SPÉCIFIQUES POUR LA SIDEBAR ===== */
+    /* Conteneur principal */
+    [data-testid="stSidebar"] {
+        background-color: #f8f9fa !important;
+    }
+
+    /* Tous les textes de la sidebar */
+    .st-emotion-cache-1cypcdb,
+    .st-emotion-cache-1cypcdb p,
+    .st-emotion-cache-1cypcdb span,
+    .st-emotion-cache-1cypcdb div {
         color: #333333 !important;
         opacity: 1 !important;
         visibility: visible !important;
     }
 
-    /* ===== SIDEBAR ===== */
-    [data-testid="stSidebar"] {
-        background-color: #f8f9fa;
-        padding: 1rem !important;
+    /* Sélecteur de langue */
+    .st-radio label {
+        color: #333333 !important;
+        background: transparent !important;
     }
 
-    /* ===== TITRES ===== */
-    .st-emotion-cache-1v0mbdj h3 {
-        color: #2c3e50 !important;
-        margin-bottom: 1rem !important;
-    }
-
-    /* ===== LIENS ===== */
-    .st-emotion-cache-1v0mbdj a {
-        color: #4CAF50 !important;
-    }
-
-    /* ===== BOUTONS RADIO ===== */
-    /* Langue */
-    .st-emotion-cache-1j9h2j3 {
-        padding: 0.5rem 0 !important;
-    }
-    
     /* Navigation */
-    .st-emotion-cache-1j9h2j3 [role="radiogroup"] {
-        gap: 0.3rem !important;
+    .st-radio [role="radiogroup"] label {
+        padding: 0.5rem 1rem !important;
+        margin: 0.2rem 0 !important;
+        border-radius: 4px !important;
     }
 
-    /* ===== EMOJIS ===== */
-    .st-emotion-cache-1v0mbdj span[role="img"] {
-        font-size: 1.2em !important;
-        margin-right: 0.3em !important;
+    /* Éléments sélectionnés */
+    .st-radio [role="radiogroup"] label[data-baseweb="radio"]:has(input:checked) {
+        background-color: #e8f5e9 !important;
+        color: #2c3e50 !important;
+    }
+
+    /* Séparateur */
+    .st-emotion-cache-1lguc8d {
+        border-color: #e0e0e0 !important;
+    }
+
+    /* ===== FORCER L'AFFICHAGE ===== */
+    /* Important pour certains appareils mobiles */
+    .stMarkdown, .stRadio, .stImage {
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 </style>
 """, unsafe_allow_html=True)
