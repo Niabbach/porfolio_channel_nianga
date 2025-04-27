@@ -34,13 +34,37 @@ lottie_contact = load_lottie_url("https://assets6.lottiefiles.com/private_files/
 # --- Style CSS personnalisé ---
 st.markdown("""
 <style>
-    .stApp { background-color: black; }
-    .stMarkdown { margin-bottom: 0.5rem; }
-    .stButton>button { transition: all 0.3s ease; }
-    .stButton>button:hover { transform: scale(1.02); }
-    .project-card { border-left: 4px solid #4CAF50; padding-left: 1rem; }
-    .back-to-top { position: fixed; bottom: 20px; right: 20px; }
-    .language-switcher { margin-top: 1rem; margin-bottom: 1rem; }
+    /* ===== FOND ET TEXTE PRINCIPAL ===== */
+    .stApp {
+        background-color: #ffffff;  /* Fond blanc */
+        color: #333333;            /* Texte sombre */
+    }
+
+    /* ===== CORRECTION VISIBILITÉ ===== */
+    /* Force le texte à être visible */
+    .stMarkdown, .stMarkdown p, .stMarkdown li {
+        color: #333333 !important; 
+        opacity: 1 !important;
+    }
+
+
+    /* ===== ZONES DE TEXTE CACHÉES ===== */
+    /* Corrige les bugs d'affichage sur mobile */
+    div[data-testid="stMarkdownContainer"] {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    /* ===== SIDEBAR ===== */
+    [data-testid="stSidebar"] {
+        background-color: #f8f9fa !important;
+    }
+
+    /* ===== BOUTONS ===== */
+    .stButton>button {
+        background-color: #4CAF50 !important;
+        color: white !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
