@@ -34,46 +34,49 @@ lottie_contact = load_lottie_url("https://assets6.lottiefiles.com/private_files/
 # --- Style CSS personnalisé ---
 st.markdown("""
 <style>
-    /* ===== CORRECTION DE LA SIDEBAR ===== */
-    [data-testid="stSidebar"] {
-        background-color: #f8f9fa !important;
-        padding: 1rem !important;
-        border-radius: 0 20px 20px 0 !important;
-    }
-    
-    /* Éléments de la sidebar */
-    .st-eb, .st-ec, .st-ed {  /* Conteneurs des radios */
-        padding: 0.5rem 0 !important;
-        margin: 0 !important;
-    }
-    
-    /* Texte dans la sidebar */
-    .st-cj, .st-ck, .st-cl, .st-cm {
+    /* ===== RÉINITIALISATION SÛRE ===== */
+    /* Réactive tous les textes */
+    .st-emotion-cache-1v0mbdj, 
+    .st-emotion-cache-1v0mbdj p,
+    .st-emotion-cache-1v0mbdj span,
+    .st-emotion-cache-1v0mbdj div {
         color: #333333 !important;
         opacity: 1 !important;
+        visibility: visible !important;
     }
-    
-    /* Boutons radio */
-    [data-testid="stWidgetLabel"] p {
-        font-weight: 500 !important;
-        font-size: 15px !important;
-        color: #333333 !important;
+
+    /* ===== SIDEBAR ===== */
+    [data-testid="stSidebar"] {
+        background-color: #f8f9fa;
+        padding: 1rem !important;
     }
-    
-    /* Séparateur */
-    .st-cn {
-        margin: 1rem 0 !important;
+
+    /* ===== TITRES ===== */
+    .st-emotion-cache-1v0mbdj h3 {
+        color: #2c3e50 !important;
+        margin-bottom: 1rem !important;
     }
-    
-    /* ===== CORRECTIONS SPÉCIFIQUES ===== */
+
+    /* ===== LIENS ===== */
+    .st-emotion-cache-1v0mbdj a {
+        color: #4CAF50 !important;
+    }
+
+    /* ===== BOUTONS RADIO ===== */
     /* Langue */
-    div[data-testid="column"] + div[data-testid="column"] {
-        padding-top: 0 !important;
+    .st-emotion-cache-1j9h2j3 {
+        padding: 0.5rem 0 !important;
     }
     
     /* Navigation */
-    div[data-testid="stVerticalBlock"] > div[data-testid="stVerticalBlock"] {
-        gap: 0.2rem !important;
+    .st-emotion-cache-1j9h2j3 [role="radiogroup"] {
+        gap: 0.3rem !important;
+    }
+
+    /* ===== EMOJIS ===== */
+    .st-emotion-cache-1v0mbdj span[role="img"] {
+        font-size: 1.2em !important;
+        margin-right: 0.3em !important;
     }
 </style>
 """, unsafe_allow_html=True)
