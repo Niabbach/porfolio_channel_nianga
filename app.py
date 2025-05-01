@@ -5,6 +5,20 @@ import json
 from streamlit_lottie import st_lottie
 import datetime
 
+# === Validation Google Search Console ===
+if '_gsc' in st.query_params:  # Se déclenche uniquement pendant la validation
+    st.markdown("""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Google Verification</title>
+        <meta name="google-site-verification" content="VOTRE_CODE_ICI" />
+    </head>
+    <body></body>
+    </html>
+    """, unsafe_allow_html=True)
+    st.stop()  # Arrête le rendu normal du portfolio
+
 # Route spéciale pour le sitemap
 if 'sitemap.xml' in st.query_params.get('_path', ''):
     st.write('''<?xml version="1.0" encoding="UTF-8"?>
