@@ -19,6 +19,8 @@ st.set_page_config(
 # Ajout des balises meta via HTML
 st.markdown("""
 <head>
+       <!-- Validation Google -->
+    <meta name="google-site-verification" content="JcDPwV9OUPc0dK5stCs_APshLfHxknw4JLH0rBDyTfU" />
     <meta name="description" content="Portfolio de Channel NIANGA, étudiant en Intelligence Artificielle. Projets en Machine Learning, Deep Learning et Développement.">
     <meta name="keywords" content="IA, Machine Learning, Python, Portfolio, Data Science, Vision par ordinateur, Computer Science, Apprentissage Automatique">
     <meta property="og:title" content="Portfolio Channel NIANGA">
