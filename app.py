@@ -453,9 +453,9 @@ elif page == translations[lang_key]['sidebar']['nav'][3]:  # Contact
         st_lottie(lottie_contact, height=300, key="contact")
 
 # Generation sitemap.xml
-if st.secrets.get("ENV") == "DEV":  # Uniquement en local
-    with open("sitemap.xml", "w") as f:
-        f.write(f"""<?xml version="1.0" encoding="UTF-8"?>
+if st.secrets.get("ENV") == "DEV" or True:  # Toujours actif
+    if st.query_params.get("_sitemap") == "xml":
+        st.write(f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://channelnianga-portfolio.streamlit.app</loc>
@@ -463,3 +463,4 @@ if st.secrets.get("ENV") == "DEV":  # Uniquement en local
         <priority>1.0</priority>
     </url>
 </urlset>""")
+        st.stop() 
