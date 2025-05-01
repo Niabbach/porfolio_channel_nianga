@@ -12,7 +12,7 @@ if '_gsc' in st.query_params:  # Se déclenche uniquement pendant la validation
     <html>
     <head>
         <title>Google Verification</title>
-        <meta name="google-site-verification" content="VOTRE_CODE_ICI" />
+        <meta name="google-site-verification" content="JcDPwV9OUPc0dK5stCs_APshLfHxknw4JLH0rBDyTfU" />
     </head>
     <body></body>
     </html>
