@@ -5,19 +5,17 @@ import json
 from streamlit_lottie import st_lottie
 import datetime
 
-# === Validation Google Search Console ===
-if '_gsc' in st.query_params:  # Se déclenche uniquement pendant la validation
+if '_gsc' in st.query_params:
     st.markdown("""
     <!DOCTYPE html>
     <html>
     <head>
-        <title>Google Verification</title>
         <meta name="google-site-verification" content="JcDPwV9OUPc0dK5stCs_APshLfHxknw4JLH0rBDyTfU" />
     </head>
     <body></body>
     </html>
     """, unsafe_allow_html=True)
-    st.stop()  # Arrête le rendu normal du portfolio
+    st.stop()  # Bloque le reste de l'app
 
 # Route spéciale pour le sitemap
 if 'sitemap.xml' in st.query_params.get('_path', ''):
@@ -46,7 +44,7 @@ st.set_page_config(
 # Ajout des balises meta via HTML
 st.markdown("""
 <head>
-       <!-- Validation Google -->
+    <!-- Validation Google -->
     <meta name="google-site-verification" content="JcDPwV9OUPc0dK5stCs_APshLfHxknw4JLH0rBDyTfU" />
     <meta name="description" content="Portfolio de Channel NIANGA, étudiant en Intelligence Artificielle. Projets en Machine Learning, Deep Learning et Développement.">
     <meta name="keywords" content="IA, Machine Learning, Python, Portfolio, Data Science, Vision par ordinateur, Computer Science, Apprentissage Automatique">
