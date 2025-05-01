@@ -3,8 +3,6 @@ from PIL import Image
 import requests
 import json
 from streamlit_lottie import st_lottie
-import pdfkit
-from jinja2 import Template
 
 
 # --- Configuration générale ---
@@ -339,46 +337,6 @@ with st.sidebar:
     st.markdown(translations[lang_key]['sidebar']['linkedin'].format(LINKEDIN))
     st.markdown("---")
     page = st.radio("🧭 Navigation", translations[lang_key]['sidebar']['nav'])
-    st.markdown("---")
-    
-    if st.button("📄 Exporter en PDF" if lang_key == "fr" else "📄 Export as PDF"):
-        try:
-            
-            # Template HTML simplifié
-            html_template = """
-            <!DOCTYPE html>
-            <html>
-            <body>
-                <h1>{{nom}}</h1>
-                <h2>{{description}}</h2>
-                <h3>Compétences</h3>
-                <ul>
-                    {% for skill in skills %}
-                    <li>{{skill}}</li>
-                    {% endfor %}
-                </ul>
-            </body>
-            </html>
-            """
-            
-            # Remplissage du template
-            rendered_html = Template(html_template).render(
-                nom=NOM,
-                description=DESCRIPTION_FR if lang_key == "fr" else DESCRIPTION_EN,
-                skills=translations[lang_key]['cv']['skills_content'].split("\n")[1:-1]
-            )
-            
-            # Génération PDF
-            pdf = pdfkit.from_string(rendered_html, False)
-            st.download_button(
-                label="⬇️ Télécharger PDF" if lang_key == "fr" else "⬇️ Download PDF",
-                data=pdf,
-                file_name=f"Portfolio_{NOM.replace(' ', '_')}.pdf",
-                mime="application/pdf"
-            )
-            
-        except Exception as e:
-            st.error(f"Erreur lors de la génération PDF : {e}")
     
 
 # --- Pages ---

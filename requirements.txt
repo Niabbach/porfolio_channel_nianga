@@ -3,5 +3,3 @@ streamlit-lottie
 Pillow
 requests
 pdfkit
-Jinja2
-wkhtmltopdf
