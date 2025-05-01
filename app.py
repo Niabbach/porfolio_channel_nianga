@@ -3,6 +3,7 @@ from PIL import Image
 import requests
 import json
 from streamlit_lottie import st_lottie
+import datetime
 
 
 # --- Configuration générale ---
@@ -450,3 +451,15 @@ elif page == translations[lang_key]['sidebar']['nav'][3]:  # Contact
     with col2:
         st.markdown("")
         st_lottie(lottie_contact, height=300, key="contact")
+
+# Generation sitemap.xml
+if st.secrets.get("ENV") == "DEV":  # Uniquement en local
+    with open("sitemap.xml", "w") as f:
+        f.write(f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://channelnianga-portfolio.streamlit.app</loc>
+        <lastmod>{datetime.datetime.now().strftime('%Y-%m-%d')}</lastmod>
+        <priority>1.0</priority>
+    </url>
+</urlset>""")

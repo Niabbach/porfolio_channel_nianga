@@ -2,4 +2,4 @@ streamlit
 streamlit-lottie
 Pillow
 requests
-pdfkit
+datetime
