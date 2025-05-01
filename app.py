@@ -5,6 +5,18 @@ import json
 from streamlit_lottie import st_lottie
 import datetime
 
+# Route spéciale pour le sitemap
+if 'sitemap.xml' in st.query_params.get('_path', ''):
+    st.write('''<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+            <loc>https://channelnianga-portfolio.streamlit.app</loc>
+            <lastmod>2025-05-01</lastmod>
+            <priority>1.0</priority>
+        </url>
+    </urlset>''')
+    st.stop()
+
 
 # --- Configuration générale ---
 st.set_page_config(
