@@ -47,38 +47,11 @@ lottie_ai = load_lottie_url("https://assets10.lottiefiles.com/packages/lf20_pprx
 lottie_contact = load_lottie_url("https://assets6.lottiefiles.com/private_files/lf30_e3pteeho.json")
 
 # --- Style CSS personnalisé ---
-st.markdown("""
-<style>
-    :root {
-        --primary: #4CAF50;
-        --text: #333333;
-        --background: #ffffff;
-        --card-bg: #f8f9fa;
-    }
-    
-    @media (prefers-color-scheme: dark) {
-        :root {
-            --text: #f0f0f0;
-            --background: #121212;
-            --card-bg: #1e1e1e;
-        }
-    }
-    
-    .stApp {
-        background-color: var(--background);
-        color: var(--text);
-    }
-    
-    .stMarkdown {
-        color: var(--text) !important;
-    }
-    
-    .project-card {
-        background-color: var(--card-bg);
-        color: var(--text) !important;
-    }
-</style>
-""", unsafe_allow_html=True)
+def load_css():
+    with open("style.css") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+load_css()
 
 # --- Données personnelles ---
 NOM = "Channel NIANGA"

@@ -1,0 +1,23 @@
+/* style.css */
+:root {
+    --primary: #4CAF50;
+    --text: #333333;
+    --background: #ffffff;
+    --card-bg: #f8f9fa;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f0f0f0;
+        --background: #121212;
+        --card-bg: #1e1e1e;
+    }
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
