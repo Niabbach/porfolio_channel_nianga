@@ -5,31 +5,6 @@ import json
 from streamlit_lottie import st_lottie
 import datetime
 
-if '_gsc' in st.query_params:
-    st.markdown("""
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta name="google-site-verification" content="JcDPwV9OUPc0dK5stCs_APshLfHxknw4JLH0rBDyTfU" />
-    </head>
-    <body></body>
-    </html>
-    """, unsafe_allow_html=True)
-    st.stop()  # Bloque le reste de l'app
-
-# Route spéciale pour le sitemap
-if 'sitemap.xml' in st.query_params.get('_path', ''):
-    st.write('''<?xml version="1.0" encoding="UTF-8"?>
-    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-        <url>
-            <loc>https://channelnianga-portfolio.streamlit.app</loc>
-            <lastmod>2025-05-01</lastmod>
-            <priority>1.0</priority>
-        </url>
-    </urlset>''')
-    st.stop()
-
-
 # --- Configuration générale ---
 st.set_page_config(
     page_title="Channel NIANGA – Portfolio | Master IA", 
@@ -214,7 +189,8 @@ translations = {
                 ("🎿 Ski race management", "Gestion de courses en C", "https://github.com/Niabbach/Ski-race-Management")
             ],
             "projects_aca": [
-                ("🏭 Atelier 4.0", "Ce projet de simulation d'atelier utilise la plateforme JADE (Java Agent DEvelopment Framework) pour créer une simulation interactive d'un environnement de production.", "https://github.com/Niabbach/atelier4.0")
+                ("🏭 Atelier 4.0", "Ce projet de simulation d'atelier utilise la plateforme JADE (Java Agent DEvelopment Framework) pour créer une simulation interactive d'un environnement de production.", "https://github.com/Niabbach/atelier4.0"),
+                ("🌐 Application GraphQL avec base MongoDB et visualisations D3.js", "Ce projet consiste en une application GraphQL qui interagit avec une base de données MongoDB pour fournir des données sur des prestations de service, avec une interface de visualisation basée sur D3.js.", "https://github.com/Niabbach/tp-docker")
             ],
             "back_to_top": "↑ Retour en haut"
         },
@@ -328,7 +304,8 @@ translations = {
                 ("🎿 Ski race management", "Race management in C", "https://github.com/Niabbach/Ski-race-Management")
             ],
             "projects_aca": [
-                ("🏭 Workshop 4.0", "This workshop simulation project uses the JADE platform (Java Agent DEvelopment Framework) to create an interactive production environment simulation.", "https://github.com/Niabbach/atelier4.0")
+                ("🏭 Workshop 4.0", "This workshop simulation project uses the JADE platform (Java Agent DEvelopment Framework) to create an interactive production environment simulation.", "https://github.com/Niabbach/atelier4.0"),
+                ("🌐 GraphQL/MongoDB Dashboard", "A full-stack project using GraphQL (Node.js/Apollo) and MongoDB, with a frontend dashboard powered by D3.js for data visualization.", "https://github.com/Niabbach/tp-docker")
             ],
             "back_to_top": "↑ Back to top"
         },
