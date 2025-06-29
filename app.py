@@ -48,7 +48,7 @@ EMAIL = "channeliba@yahoo.com"
 VILLE = "Caen, France"
 GITHUB = "https://github.com/Niabbach"
 LINKEDIN = "https://www.linkedin.com/in/channel-nianga-44095615b"
-PHOTO = "Photo.JPEG"
+PHOTO = "images/Photo.JPG"
 
 # --- Traductions ---
 translations = {
