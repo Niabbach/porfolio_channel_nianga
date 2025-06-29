@@ -318,6 +318,8 @@ if page == translations[lang_key]['sidebar']['nav'][0]:  # Accueil/Home
         st.markdown(translations[lang_key]['home']['contact'])
         st.markdown(translations[lang_key]['home']['contact_content'])
         st.markdown(translations[lang_key]['home']['quote'])
+    with col2:
+        st_lottie(lottie_ai, height=350, key="ai")
 
 elif page == translations[lang_key]['sidebar']['nav'][1]:  # CV/Resume
     st.title(translations[lang_key]['cv']['title'])
@@ -409,3 +411,5 @@ elif page == translations[lang_key]['sidebar']['nav'][3]:  # Contact
     with col1:
         st.markdown(translations[lang_key]['contact']['form_title'])
         st.markdown(translations[lang_key]['contact']['form'], unsafe_allow_html=True)
+    with col2:
+        st_lottie(lottie_ai, height=350, key="ai")
