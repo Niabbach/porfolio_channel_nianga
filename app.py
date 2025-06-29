@@ -15,19 +15,6 @@ st.set_page_config(
         'About': "Portfolio de Channel NIANGA - Master 2 IA / Channel NIANGA's Portfolio - Master's in AI"
     }
 )
-
-# Ajout des balises meta via HTML
-st.markdown("""
-<head>
-    <!-- Validation Google -->
-    <meta name="google-site-verification" content="JcDPwV9OUPc0dK5stCs_APshLfHxknw4JLH0rBDyTfU" />
-    <meta name="description" content="Portfolio de Channel NIANGA, étudiant en Intelligence Artificielle. Projets en Machine Learning, Deep Learning et Développement.">
-    <meta name="keywords" content="IA, Machine Learning, Python, Portfolio, Data Science, Vision par ordinateur, Computer Science, Apprentissage Automatique">
-    <meta property="og:title" content="Portfolio Channel NIANGA">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://channelnianga-portfolio.streamlit.app/">
-</head>
-""", unsafe_allow_html=True)
    
 
 # --- Cache pour les ressources ---
@@ -61,7 +48,7 @@ EMAIL = "channeliba@yahoo.com"
 VILLE = "Caen, France"
 GITHUB = "https://github.com/Niabbach"
 LINKEDIN = "https://www.linkedin.com/in/channel-nianga-44095615b"
-PHOTO = "Photo.JPG"
+PHOTO = "Photo.JPEG"
 
 # --- Traductions ---
 translations = {
@@ -163,7 +150,8 @@ translations = {
             ],
             "projects_aca": [
                 ("🏭 Atelier 4.0", "Ce projet de simulation d'atelier utilise la plateforme JADE (Java Agent DEvelopment Framework) pour créer une simulation interactive d'un environnement de production.", "https://github.com/Niabbach/atelier4.0"),
-                ("🌐 Application GraphQL avec base MongoDB et visualisations D3.js", "Ce projet consiste en une application GraphQL qui interagit avec une base de données MongoDB pour fournir des données sur des prestations de service, avec une interface de visualisation basée sur D3.js.", "https://github.com/Niabbach/tp-docker")
+                ("🌐 Application GraphQL avec base MongoDB et visualisations D3.js", "Ce projet consiste en une application GraphQL qui interagit avec une base de données MongoDB pour fournir des données sur des prestations de service, avec une interface de visualisation basée sur D3.js.", "https://github.com/Niabbach/tp-docker"),
+                ("🟦 ShapeGame", "Jeu graphique Java avec design patterns (MVC, State, Observer, Strategy, Adapter)", "https://github.com/Niabbach/ShapeGame")
             ],
             "back_to_top": "↑ Retour en haut"
         },
@@ -278,7 +266,8 @@ translations = {
             ],
             "projects_aca": [
                 ("🏭 Workshop 4.0", "This workshop simulation project uses the JADE platform (Java Agent DEvelopment Framework) to create an interactive production environment simulation.", "https://github.com/Niabbach/atelier4.0"),
-                ("🌐 GraphQL/MongoDB Dashboard", "A full-stack project using GraphQL (Node.js/Apollo) and MongoDB, with a frontend dashboard powered by D3.js for data visualization.", "https://github.com/Niabbach/tp-docker")
+                ("🌐 GraphQL/MongoDB Dashboard", "A full-stack project using GraphQL (Node.js/Apollo) and MongoDB, with a frontend dashboard powered by D3.js for data visualization.", "https://github.com/Niabbach/tp-docker"),
+                ("🟦 ShapeGame", "Java graphic game using design patterns (MVC, State, Observer, Strategy, Adapter)", "https://github.com/Niabbach/ShapeGame")
             ],
             "back_to_top": "↑ Back to top"
         },
@@ -300,7 +289,7 @@ translations = {
 
 # --- Sidebar ---
 with st.sidebar:
-    st.image(PHOTO, width=150)
+    st.image(PHOTO, width=350)
     st.markdown(f"### {NOM}")
     
     # Sélecteur de langue
@@ -330,7 +319,8 @@ if page == translations[lang_key]['sidebar']['nav'][0]:  # Accueil/Home
         st.markdown(translations[lang_key]['home']['contact_content'])
         st.markdown(translations[lang_key]['home']['quote'])
     with col2:
-        st_lottie(lottie_ai, height=350, key="ai")
+        with st.spinner('Chargement...' if lang_key == "fr" else 'Loading...'):
+            st_lottie(lottie_ai, height=350, key="ai")
 
 elif page == translations[lang_key]['sidebar']['nav'][1]:  # CV/Resume
     st.title(translations[lang_key]['cv']['title'])
@@ -423,5 +413,5 @@ elif page == translations[lang_key]['sidebar']['nav'][3]:  # Contact
         st.markdown(translations[lang_key]['contact']['form_title'])
         st.markdown(translations[lang_key]['contact']['form'], unsafe_allow_html=True)
     with col2:
-        st.markdown("")
-        st_lottie(lottie_contact, height=300, key="contact")
+        with st.spinner('Chargement...' if lang_key == "fr" else 'Loading...'):
+            st_lottie(lottie_contact, height=300, key="contact")
