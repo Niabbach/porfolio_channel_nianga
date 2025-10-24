@@ -68,6 +68,9 @@ def add_seo_meta():
     <link rel="alternate" hreflang="en" href="https://channelnianga-portfolio.streamlit.app/?lang=en" />
     <link rel="alternate" hreflang="x-default" href="https://channelnianga-portfolio.streamlit.app/" />
     """, unsafe_allow_html=True)
+    st.markdown("""
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    """, unsafe_allow_html=True)
 
 def add_skip_links():
     st.markdown("""
