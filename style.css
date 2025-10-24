@@ -1,4 +1,4 @@
-/* style.css */
+
 :root {
     --primary: #4CAF50;
     --text: #333333;
@@ -6,65 +6,54 @@
     --card-bg: #f8f9fa;
 }
 
+/* Règles de base */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+/* Support conditionnel pour le dark mode */
 @media (prefers-color-scheme: dark) {
-    :root {
-        --text: #f0f0f0;
-        --background: #121212;
-        --card-bg: #1e1e1e;
+    body {
+        color: #f0f0f0;
+        background-color: #121212;
+    }
+    
+    .project-card {
+        background-color: #1e1e1e;
     }
 }
 
 .project-card {
-    background-color: var(--card-bg);
+    background-color: #f8f9fa;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
     border: 1px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.project-card:focus {
-    border-color: #4CAF50;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
-}
-
-/* Contraste des couleurs pour accessibilité */
-.high-contrast {
-    color: #000000 !important;
-    background-color: #FFFFFF !important;
-}
-
-.high-contrast .project-card {
-    background-color: #F5F5F5 !important;
-    color: #000000 !important;
-    border: 2px solid #000000 !important;
-}
-
-/* Taille de texte minimale */
-body {
-    font-size: 16px;
-    line-height: 1.5;
 }
 
 /* Focus visible pour navigation au clavier */
-button:focus, a:focus, [tabindex]:focus {
+button:focus, 
+a:focus, 
+[tabindex]:focus {
     outline: 3px solid #4CAF50 !important;
     outline-offset: 2px !important;
 }
 
 /* Cache visuel mais accessible aux lecteurs d'écran */
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
 }
 
 /* Skip links */
@@ -88,19 +77,6 @@ button:focus, a:focus, [tabindex]:focus {
     max-width: 80ch; /* Largeur optimale pour la lecture */
 }
 
-/* Support réduit de mouvement */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-    
-    .lottie-container {
-        display: none !important;
-    }
-}
-
 /* Back to top button */
 .back-to-top {
     text-align: center;
@@ -109,11 +85,12 @@ button:focus, a:focus, [tabindex]:focus {
 }
 
 .back-to-top a {
-    background-color: var(--primary);
+    background-color: #4CAF50;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     text-decoration: none;
+    display: inline-block;
 }
 
 .back-to-top a:hover {
@@ -122,7 +99,7 @@ button:focus, a:focus, [tabindex]:focus {
 
 /* Amélioration des liens */
 a {
-    color: var(--primary);
+    color: #4CAF50;
     text-decoration: underline;
 }
 
@@ -130,10 +107,10 @@ a:hover {
     color: #45a049;
 }
 
-/* Amélioration des boutons */
+/* Amélioration des boutons Streamlit */
 .stButton button {
     width: 100%;
-    background-color: var(--primary);
+    background-color: #4CAF50;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -143,4 +120,24 @@ a:hover {
 
 .stButton button:hover {
     background-color: #45a049;
+}
+
+/* Support réduit de mouvement - version simplifiée */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Responsive design pour mobiles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .project-card {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
 }
