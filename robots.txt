@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://channelnianga-portfolio.streamlit.app/sitemap.xml

@@ -28,20 +28,27 @@ def add_seo_meta():
     <meta name="keywords" content="data scientist, intelligence artificielle, machine learning, deep learning, python, tensorflow, pytorch, computer vision, nlp, portfolio, stage IA">
     <meta name="author" content="Channel NIANGA">
     <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="JcDPwV9OUPc0dK5stCs_APshLfHxknw4JLH0rBDyTfU" />
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://channelnianga-portfolio.streamlit.app/">
     <meta property="og:title" content="Channel NIANGA - Data Scientist & AI Engineer">
     <meta property="og:description" content="Portfolio d'un expert en IA - Projets en ML, Deep Learning et Computer Vision">
-    <meta property="og:image" content="https://channelnianga-portfolio.streamlit.app/images/Photo.JPG">
+    <meta property="og:image" content="https://channelnianga-portfolio.streamlit.app/images/Photo.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://channelnianga-portfolio.streamlit.app/">
     <meta property="twitter:title" content="Channel NIANGA - Data Scientist & AI Engineer">
     <meta property="twitter:description" content="Portfolio d'un expert en IA - Projets en ML, Deep Learning et Computer Vision">
-    <meta property="twitter:image" content="https://channelnianga-portfolio.streamlit.app/images/Photo.JPG">
+    <meta property="twitter:image" content="https://channelnianga-portfolio.streamlit.app/images/Photo.png">
     
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -50,7 +57,7 @@ def add_seo_meta():
         "@type": "Person",
         "name": "Channel NIANGA",
         "url": "https://channelnianga-portfolio.streamlit.app",
-        "image": "https://channelnianga-portfolio.streamlit.app/images/Photo.JPG",
+        "image": "https://channelnianga-portfolio.streamlit.app/images/Photo.png",
         "description": "Data Scientist and AI Engineer specializing in Machine Learning and Deep Learning",
         "jobTitle": "Data Scientist & AI Engineer",
         "alumniOf": {
@@ -67,9 +74,6 @@ def add_seo_meta():
     <link rel="alternate" hreflang="fr" href="https://channelnianga-portfolio.streamlit.app/?lang=fr" />
     <link rel="alternate" hreflang="en" href="https://channelnianga-portfolio.streamlit.app/?lang=en" />
     <link rel="alternate" hreflang="x-default" href="https://channelnianga-portfolio.streamlit.app/" />
-    """, unsafe_allow_html=True)
-    st.markdown("""
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     """, unsafe_allow_html=True)
 
 def add_skip_links():
